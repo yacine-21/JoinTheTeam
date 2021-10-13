@@ -1,0 +1,10 @@
+{% macro category (cat_name, cat_description,image) %}
+
+<div class="card card_cat" style="width: 18rem;">
+    <img src="/images/icons/{{image}}" class="card-img-top card_icon" alt="icon">
+    <div class="card-body">
+        <h3>{{cat_name}}</h3>
+        <p class="card-text">{{cat_description}}</p>
+    </div>
+</div>
+{% endmacro %}

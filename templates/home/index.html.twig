@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% from '/Macro/index.html.twig' import category %}
+
+{% block title %}Home page !{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+  <h1 class="text_landing"> Find your <span class="text_title">dream </span> <br> jobs with us </h1>
+  <img class="landingPagePhoto" src="/images/landingpage.png" alt="landing_page">
+</div>
+
+<div class="container_2">
+  <h1 class="text_landing"> Browse <span class="text_title">Job Cateogry</span></h1>
+  <section class="categories">
+    {{category("ART & DESIGN", "3500 Jobs vacancy", "art_design-icon.png")}}
+    {{category("UI/UX Design", "750 Jobs vacancy","ux_icon.png")}}
+    {{category("IT & Software", "8520 Jobs vacancy","technical_support_icon.png")}}
+    {{category("Business Development", "120 Jobs vacancy","briefcase_icon.png")}}
+    {{category("Marketing", "1200 Jobs vacancy","social-media_icon.png")}}
+    {{category("Education", "1920 Jobs vacancy","book_stack_icon.png")}}
+    {{category("Accounting & Finance", "10K Jobs vacancy","profits_icon.png")}}
+    {{category("Health Care", "2200 Jobs vacancy","healthcare_icon.png")}}
+  </section>
+</div>
+
+{% endblock %}
