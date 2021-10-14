@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% from '/Macro/index.html.twig' import category %}
 
 {% block title %}Home page !{% endblock %}
 
@@ -15,14 +14,18 @@
 <div class="container_2">
   <h1 class="text_landing"> Browse <span class="text_title">Job Cateogry</span></h1>
   <section class="categories">
-    {{category("ART & DESIGN", "3500 Jobs vacancy", "art_design-icon.png")}}
-    {{category("UI/UX Design", "750 Jobs vacancy","ux_icon.png")}}
-    {{category("IT & Software", "8520 Jobs vacancy","technical_support_icon.png")}}
-    {{category("Business Development", "120 Jobs vacancy","briefcase_icon.png")}}
-    {{category("Marketing", "1200 Jobs vacancy","social-media_icon.png")}}
-    {{category("Education", "1920 Jobs vacancy","book_stack_icon.png")}}
-    {{category("Accounting & Finance", "10K Jobs vacancy","profits_icon.png")}}
-    {{category("Health Care", "2200 Jobs vacancy","healthcare_icon.png")}}
+
+    {% for category in categories %}
+    <a class="card card_cat" href="{{ path('category', { 'id': category.id}) }}">
+      <div class="inner_container"</div>
+          <img src="/images/icons/{{category.Image}}" class="card-img-top card_icon" alt="icon">
+          <div class="card-body">
+              <h3>{{category.name}}</h3>
+              <p class="card-text">{{category.description}}</p>
+          </div>
+      </div>
+  </a>
+    {% endfor %}
   </section>
 </div>
 
