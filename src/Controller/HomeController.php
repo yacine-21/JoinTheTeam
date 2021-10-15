@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Category;
-use App\Controller\id;
+
 
 class HomeController extends AbstractController
 {
@@ -48,8 +48,8 @@ class HomeController extends AbstractController
         $em->persist($category);
         $em->flush();
 
-        return $this->render("Category/index.html.twig",[
-            "id" => $id
+        return $this->renderForm("Category/index.html.twig",[
+            "id" => $id,
         ]);
     }
 }
